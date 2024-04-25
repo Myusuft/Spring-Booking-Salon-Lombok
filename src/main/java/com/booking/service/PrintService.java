@@ -34,7 +34,7 @@ public class PrintService {
     }
 
     // Function yang dibuat hanya sebgai contoh bisa disesuaikan kembali
-    public void showRecentReservation(List<Reservation> reservationList){
+    public static void showRecentReservation(List<Reservation> reservationList){
         int num = 1;
         System.out.println("+================================================================================================+");
         System.out.printf("| %-4s | %-4s | %-11s | %-15s | %-15s | %-15s | %-10s |\n",

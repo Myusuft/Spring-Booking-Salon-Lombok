@@ -87,7 +87,7 @@ public class ReservationService {
                     if (anotherService.equalsIgnoreCase("Y") || anotherService.equalsIgnoreCase("N")) {
                         validInput = true;
                     } else {
-                        System.out.println("Error: Invalid input. Please enter either 'Y' or 'N'.");
+                        System.out.println("ERROR: Invalid input. Please enter either 'Y' or 'N'.");
                     }
                 }
             }
@@ -103,7 +103,7 @@ public class ReservationService {
             idExists = false;
             for (Reservation existingReservation : ReservationRepository.getAllReservation()) {
                 if (existingReservation.getReservationId().equals(reservationId)) {
-                    System.out.println("Error: There is already a reservation with this ID. Please provide a unique ID.");
+                    System.out.println("ERROR: There is already a reservation with this ID. Please provide a unique ID.");
                     idExists = true;
                     break;
                 }
@@ -133,7 +133,7 @@ public class ReservationService {
                     reservation.setWorkstage("Cancel");
                     System.out.println("Reservasi dengan id " + reservation.getReservationId() + " sudah Cancel");
                 } else {
-                    System.out.println("Error: Invalid action. Please enter either 'Finish' or 'Cancel'.");
+                    System.out.println("ERROR: Invalid action. Please enter either 'Finish' or 'Cancel'.");
                 }
             }
         } else {
@@ -147,7 +147,7 @@ public class ReservationService {
         Reservation reservation = null;
 
         while (reservation == null) {
-//            PrintService.showHistoryReservation();
+            PrintService.showRecentReservation(reservations);
             System.out.println("Input Reservation Id:");
             String reservationId = scanner.nextLine();
 
@@ -180,7 +180,7 @@ public class ReservationService {
                 reservation.setWorkstage("Cancel");
                 System.out.println("Reservasi dengan id " + reservation.getReservationId() + " sudah Cancel");
             } else {
-                System.out.println("Error: Invalid action. Please enter either 'Finish' or 'Cancel'.");
+                System.out.println("ERROR: Invalid action. Please enter either 'Finish' or 'Cancel'.");
             }
         }
     }
